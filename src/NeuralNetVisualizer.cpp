@@ -14,7 +14,7 @@ NeuralNetVisualizer::NeuralNetVisualizer(
 ) : window(window), net(net), neuronRadius(neuronRadius),
     spacingX(spacingX), spacingY(spacingY), layers(net.getLayers())
 {
-    if (!font.openFromFile("arial.ttf")) {
+    if (!font.loadFromFile("arial.ttf")) {
         // Handle error: you can print a message or exit
         std::cout << "Failed to load font!" << std::endl;
     }
@@ -89,7 +89,8 @@ void NeuralNetVisualizer::drawNeurons() {
 
             window.draw(neuron);
 
-            sf::Text text(font);
+            sf::Text text;
+            text.setFont(font);
             char buffer[8];
             snprintf(buffer, sizeof(buffer), "%.2f", act); // Format to 2 decimal places
             text.setString(buffer);
@@ -97,7 +98,7 @@ void NeuralNetVisualizer::drawNeurons() {
             text.setFillColor(sf::Color::Black);
             // Center the text on the neuron
             sf::FloatRect textRect = text.getLocalBounds();
-            text.setOrigin(textRect.getCenter());
+            text.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
             text.setPosition(sf::Vector2f(neuronPositions[l][n].x, neuronPositions[l][n].y));
 
             window.draw(text);
