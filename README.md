@@ -1,4 +1,4 @@
-# NN_Cpp-
+# Neural Nets in C++ !!!!
 
 Constructed a neural network from scratch in C++ and added a visualization function too.
 
