@@ -111,14 +111,6 @@ cd NN_Cpp-
 - Visualization may not render correctly for larger networks.
 - MNIST training is basic; for advanced tasks, further optimization and regularization are recommended.
 
-## Contributing
-
-Bug reports and pull requests are welcome!
-
-## License
-
-This project is licensed under the MIT License.
-
 ## Acknowledgements
 
 - MNIST dataset by Yann LeCun et al.
